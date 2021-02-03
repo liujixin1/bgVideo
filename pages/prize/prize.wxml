@@ -1,0 +1,11 @@
+<view class="container">
+  <image  mode='aspectFill' class="titleImg" src="../../images/prizeTitle.png"></image>
+  <roulette class="roulette" options="{{rouletteData}}" angel="{{angel}}" bind:getAngel="getAngel" bind:getPrize="getPrize" />
+  <image  mode='aspectFill' class="prizeBg" src="../../images/prizeBg.jpg"></image>
+  <view class="sum">今日还有{{lotteryNum}}次抽奖机会</view>
+  <view class="list">
+    <view class="listTitle">抽奖说明</view>
+    <view class="listItem">每位用户每天2次抽奖机会</view>
+    <view class="listItem">中奖者请耐心等待客服下发序列号，活动火爆中</view>
+  </view>
+</view>

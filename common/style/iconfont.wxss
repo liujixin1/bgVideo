@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'iconfont';  /* project id 2355371 */
+  src: url('//at.alicdn.com/t/font_2355371_5w3038qwac8.eot');
+  src: url('//at.alicdn.com/t/font_2355371_5w3038qwac8.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_2355371_5w3038qwac8.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_2355371_5w3038qwac8.woff') format('woff'),
+  url('//at.alicdn.com/t/font_2355371_5w3038qwac8.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_2355371_5w3038qwac8.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16rpx;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* 问题提交 */
+.icon-my:before {
+  content: "\e615";
+}
+
+/* 抽奖 */
+.icon-glory:before {
+  content: "\e604";
+}
+
+/* 客服 */
+.icon-service:before {
+  content: "\e6ab";
+}
+/* 箭头 */
+.icon-rightArrow:before {
+  content: "\e603";
+}
+/* 意见反馈 */
+.icon-feedback:before {
+  content: "\e60f";
+}
+
+
+/* 火苗 */
+.icon-fire:before {
+  content: "\e674";
+}

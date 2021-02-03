@@ -1,0 +1,198 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "cloudfunctionRoot": "cloudFuntion/",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": false,
+    "uploadWithSourceMap": true,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "bundle": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.10.4",
+  "appid": "wx49993fbccf1ecd76",
+  "projectname": "%E8%83%8C%E6%99%AF%E8%A7%86%E9%A2%91",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "我的",
+          "pathName": "pages/person/person",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/classify/classify",
+          "pathName": "pages/classify/classify",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/details/details",
+          "pathName": "pages/details/details",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "海报1",
+          "pathName": "pages/placard1/placard1",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/testPaper1/testPaper1",
+          "pathName": "pages/testPaper1/testPaper1",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "海报2",
+          "pathName": "pages/placard2/placard2",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/testPaper3/testPaper3",
+          "pathName": "pages/testPaper3/testPaper3",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/placard3/placard3",
+          "pathName": "pages/placard3/placard3",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/placard4/placard4",
+          "pathName": "pages/placard4/placard4",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/testPaper4/testPaper4",
+          "pathName": "pages/testPaper4/testPaper4",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "同名",
+          "pathName": "pages/part/pages/testPaper5/testPaper5",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/part/pages/placard5/placard5",
+          "pathName": "pages/part/pages/placard5/placard5",
+          "query": "name = '刘'",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/part/pages/testPaper6/testPaper6",
+          "pathName": "pages/part/pages/testPaper6/testPaper6",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 13,
+          "name": "国庆",
+          "pathName": "pages/part/pages/nationalDay/nationalDay",
+          "query": "id=e656fa635f72a13400b146c562ee6bea",
+          "scene": null
+        },
+        {
+          "id": 14,
+          "name": "恋爱契合度",
+          "pathName": "pages/part/pages/testPaper6/testPaper6",
+          "query": "id=6",
+          "scene": null
+        },
+        {
+          "id": 15,
+          "name": "pages/part/pages/testPaper7/testPaper7",
+          "pathName": "pages/part/pages/testPaper7/testPaper7",
+          "query": "id=7",
+          "scene": null
+        },
+        {
+          "name": "pages/part/pages/placard7/placard7",
+          "pathName": "pages/part/pages/placard7/placard7",
+          "query": "id=e656fa635f72a13400b146c562ee6bea",
+          "scene": null
+        },
+        {
+          "name": "play",
+          "pathName": "pages/part/pages/testPaper8/testPaper8",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "详情",
+          "pathName": "pages/detail/detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "抽奖",
+          "pathName": "pages/prize/prize",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

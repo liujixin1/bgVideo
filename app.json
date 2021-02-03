@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/classify/classify",
+    "pages/person/person",
+    "pages/detail/detail",
+    "pages/prize/prize",
+    "pages/packet/packet",
+    "pages/login/login"
+  ],
+ 
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationStyle": "default",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "微背景",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#000000",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "iconPath": "images/person.png",
+        "selectedIconPath": "images/person1.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

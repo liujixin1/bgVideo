@@ -1,0 +1,21 @@
+/**app.wxss**/
+@import "./common/style/iconfont.wxss";
+@import "./common/style/animate.wxss";
+
+button {
+  font-size: 28rpx;
+  background:none;
+  border: 0rpx solid #fff;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  border-radius:0;
+  box-shadow: 0;
+}
+button-hover {
+color:#fff;
+background-color: #fff;
+}
+button::after{
+border: none;
+}

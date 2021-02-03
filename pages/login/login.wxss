@@ -1,0 +1,45 @@
+/* pages/login/login.wxss */
+.userinfo-avatar {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  display: block;
+  border: 2rpx solid #ff8080;
+  margin: 0 auto;
+  margin-top: 400rpx;
+  overflow: hidden;
+}
+.userinfo-nickname {
+  font-size: 35rpx;
+  font-weight: bold;
+  display: block;
+  color: #222;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  margin-top: 30rpx;
+}
+.btnList{
+  display: flex;
+  justify-content: space-between;
+  width: 400rpx;
+  margin: 0 auto;
+  margin-top: 200rpx;
+
+}
+.btnList .btn{
+  width: 150rpx;
+  background: #e9e9e9;
+  color: #fff;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  font-weight: bold;
+  box-shadow: 2rpx 2rpx 4rpx rgba(0,0,0,.2);
+}
+.btnList .btn:last-child{
+  background: #ff8080;
+}

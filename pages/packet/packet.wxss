@@ -1,0 +1,8 @@
+/* pages/packet/packet.wxss */
+.headPortrait{
+  width: 200rpx;
+  height: 200rpx;
+  display: block;
+  margin: 0 auto;
+  margin-top: 200rpx;
+}

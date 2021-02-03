@@ -1,0 +1,59 @@
+<!--pages/person/person.wxml-->
+<view class='container'>
+  <view class="userinfo">
+    <view wx:if='{{!userInfo.openid}}' class="login">
+      <image class="headPortrait" src="../../images/headPortrait.png"></image>
+      <button hover-class="none" class="btn" open-type='getUserInfo' bindgetuserinfo="getUserInfo">登录</button>
+    </view>
+    <block wx:else>
+      <open-data class="userinfo-avatar" type="userAvatarUrl"></open-data>
+      <open-data class="userinfo-nickname" type="userNickName"></open-data>
+    </block>
+  </view>
+  <!-- <view class='order-center'>
+    <view class='order-list' bindtap='vip'>
+      <view class='iconfont .icon-vip'></view>
+      <view class='order-list-text'>会员</view>
+    </view>
+    <view class='order-list' bindtap='collect'>
+      <view class='iconfont icon-collect'></view>
+      <view class='order-list-text'>收藏</view>
+    </view>
+    <view class='order-list' bindtap='myEvaluate'>
+      <view class='iconfont icon-evaluate'></view>
+      <view class='order-list-text'>评价</view>
+    </view>
+  </view> -->
+  <!--导航容器  -->
+  <view class='nav-box'>
+    <!-- <view class='nav-item' bindtap="toCollect">
+      <view class='nav-item-left'>
+        <view class='iconfont icon-collect'></view>
+        <view class='name'>我的收藏</view>
+      </view>
+      <view class='iconfont icon-rightArrow'></view>
+    </view> -->
+    <button class='nav-item' open-type='contact'>
+      <view class='nav-item-left'>
+        <view class='iconfont icon-service'></view>
+        <view class='name'>联系客服</view>
+      </view>
+      <view class='iconfont icon-rightArrow'></view>
+    </button>
+    <button class='nav-item' open-type='contact'>
+      <view class='nav-item-left'>
+        <view class='iconfont icon-feedback'></view>
+        <view class='name'>意见反馈</view>
+      </view>
+      <view class='iconfont icon-rightArrow'></view>
+    </button>
+    <button class='nav-item' bindtap="toPacket">
+      <view class='nav-item-left'>
+        <view class='iconfont icon-my'></view>
+        <view class='name'>我的红包封面</view>
+      </view>
+      <view class='iconfont icon-rightArrow'></view>
+    </button>
+    
+  </view>
+</view>

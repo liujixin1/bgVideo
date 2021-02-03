@@ -1,0 +1,44 @@
+<!--pages/find/find.wxml-->
+<import src='../../template/load/load.wxml' />
+<view class="container">
+  <view style='height:{{navH}}px' class='title'>
+    <view class='nav'>
+      <view id='2' bindtap='navClick' class='navItem {{navid == "2"?"active":""}}'>文章</view>
+      <view id='1' bindtap='navClick' class='navItem {{navid == "1"?"active":""}}'>文章</view>
+    </view>
+
+  </view>
+  <template is='load' data='{{navH}}'></template>
+  <view class='main'>
+    
+    <view wx:if='{{navid == "2"}}' class="video">
+      <view class='list'>
+        <block wx:for='{{listData}}' wx:key="{{item}}">
+          <view data-id='{{item._id}}' data-status='{{item.status}}' class='listItem' bindtap='toArticleDetail'>
+            <image mode='aspectFill' class='itemImg' src='{{item.img}}'></image>
+            <view class='itemText'>
+              <view class="name">{{item.name}}</view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <!-- 文章 -->
+    <view wx:if='{{navid == "1"}}' class="essay">
+      <view class='list'>
+        <block wx:for='{{listData}}' wx:key="{{item}}">
+          <view data-id='{{item._id}}' data-status='{{item.status}}' class='item' bindtap='toArticleDetail'>
+            <view class='itemLeft'>
+              <view class='text'>{{item.name}}</view>
+              <view class='time'>{{item.date}}</view>
+            </view>
+            <view class="imgCenter">
+              <image class='itemImg' mode='aspectFill' src='{{item.img}}'></image>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="isEnd" wx:if="{{isEnd}}">没有更多了~</view>
+  </view>
+</view>
