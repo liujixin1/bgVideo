@@ -1,7 +1,8 @@
 <!--pages/detail/detail.wxml-->
 <view class="container">
   <view class='main'>
-    <image class='imgMain' mode='aspectFill' src='{{img}}'></image>
+    <image wx:if="{{!model}}" class='imgMain' mode='aspectFill' src='{{img}}'></image>
+    <video wx:else class="imgMain" src="{{videoPath}}"></video>
     <button wx:if='{{opType}}' class="itemLeFooter" bindtap='saveImage'>保存背景</button>
   <button wx:else class="itemLeFooter" open-type="openSetting" bindtap='saveImage'>保存背景</button>
     <!-- <button  class="itemLeFooter" open-type='getUserInfo' bindgetuserinfo="getUserInfo">下载背景</button> -->

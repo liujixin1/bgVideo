@@ -28,17 +28,18 @@ page,
   z-index: 100;
 }
 .itemLeFooter{
-  display: flex;
   justify-content: space-between;
   height: 90rpx;
   line-height: 90rpx;
   position: absolute;
-  bottom: 15rpx;
+  bottom: 65rpx;
   left: 50%;
   padding: 0 50rpx;
   box-sizing: border-box;
   /* transform: translateX(-50%); */
-  margin-left: -140rpx;
+  margin-left: -120rpx;
+  width: 240rpx;
+  text-align: center;
   z-index: 10;
   background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
   border-radius: 45rpx;
