@@ -13,9 +13,10 @@ Page({
     isEnd: false,
   },
   toArticleDetail(e) {
-    const src = e.currentTarget.dataset.src;
+    const id = e.currentTarget.dataset.id;
+   
     wx.navigateTo({
-      url: `/pages/detail/detail?&img=${src}`
+      url: `/pages/detail/detail?&id=${id}`
     })
   },
   getData() {

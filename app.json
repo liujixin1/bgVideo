@@ -4,8 +4,6 @@
     "pages/classify/classify",
     "pages/person/person",
     "pages/detail/detail",
-    "pages/prize/prize",
-    "pages/packet/packet",
     "pages/login/login"
   ],
  

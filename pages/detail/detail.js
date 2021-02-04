@@ -7,12 +7,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    img: "",
-    pop: true,
-    model:''
+    model: '',
+    img: '',
+    opType: true,
+    videoPath: "https://video.beibeibang.com.cn/B01SC691.mp4"
   },
   // 登录
-  getUserInfo: function(e) {
+  getUserInfo: function (e) {
     const that = this;
     if (e.detail.errMsg == "getUserInfo:ok") {
       wx.showLoading({
@@ -24,7 +25,7 @@ Page({
         })
         wx.hideLoading();
       } else {
-        app.login(e, function() {
+        app.login(e, function () {
           wx.navigateTo({
             url: `/pages/prize/prize`
           })
@@ -34,72 +35,205 @@ Page({
     }
 
   },
+  //保存图片
+  saveImage() {
+    var that = this;
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting['scope.writePhotosAlbum']) {
+          wx.showLoading({
+            title: '背景保存中...',
+            mask: true
+          })
+          let link = that.data.videoPath;
+          let fileName = new Date().valueOf();
+          wx.downloadFile({
+            url: link,
+            filePath: wx.env.USER_DATA_PATH + '/' + fileName + '.mp4',
+            success: res => {
+              wx.hideLoading()
+              console.log(res);
+              let filePath = res.filePath;
+              wx.saveVideoToPhotosAlbum({
+                filePath,
+                success: file => {
+                  console.log(file)
+                  let fileMgr = wx.getFileSystemManager();
+                  fileMgr.unlink({
+                    filePath: wx.env.USER_DATA_PATH + '/' + fileName + '.mp4',
+                    success: function (prop) {
+                      if (prop.errMsg == "unlink:ok") {
+                        wx.showModal({
+                          content: '背景保存成功',
+                          showCancel: false,
+                          success() {
+                            // app.putData(that.data.dataId, that.data.dataCenter)
+                          }
+                        })
+                      }
+                    },
+                  })
+                },
+              })
+            },
+            fail: err => {
+              console.log(err)
+              wx.hideLoading()
+              wx.showModal({
+                title: '提示',
+                content: err.errMsg,
+              })
+            },
+            complete: res => {
+              console.log(res)
+            }
+          })
+        } else {
+          wx.authorize({
+            scope: 'scope.writePhotosAlbum',
+            success() {
+              wx.showLoading({
+                title: '背景保存中...',
+                mask: true
+              })
+              let link = that.data.videoPath;
+              let fileName = new Date().valueOf();
+              wx.downloadFile({
+                url: link,
+                filePath: wx.env.USER_DATA_PATH + '/' + fileName + '.mp4',
+                success: res => {
+                  console.log(res);
+                  let filePath = res.filePath;
+                  wx.saveVideoToPhotosAlbum({
+                    filePath,
+                    success: file => {
+                      wx.hideLoading()
+                      let fileMgr = wx.getFileSystemManager();
+                      fileMgr.unlink({
+                        filePath: wx.env.USER_DATA_PATH + '/' + fileName + '.mp4',
+                        success: function (prop) {
+                          if (prop.errMsg == "unlink:ok") {
+                            wx.showModal({
+                              content: '背景保存成功',
+                              showCancel: false,
+                              success() {
+                                // app.putData(that.data.dataId, that.data.dataCenter)
+                              }
+                            })
+                          }
+                        },
+                      })
+                    },
+                  })
+                },
+                fail: err => {
+                  console.log(err)
+                  wx.hideLoading()
+                  wx.showModal({
+                    title: '提示',
+                    content: err.errMsg,
+                  })
+                },
+                complete: res => {
+                  console.log(res)
+                }
+              })
+
+            },
+            fail() {
+              that.setData({
+                opType: false
+              })
+            }
+          })
+
+        }
+      }
+    })
+  },
+  getData(id) {
+    const that = this;
+    wx.showLoading({
+      title: '加载中...'
+    })
+    db.collection('test').doc(id).get().then(res => {
+      setTimeout(() => {
+        wx.hideLoading()
+      }, 500)
+      that.setData({
+        img: res.data.img
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     const that = this;
+    wx.showLoading({
+      title: '加载中...'
+    })
+    that.getData(options.id)
     db.collection('model').get().then(res => {
       that.setData({
-        model:res.data[0].bool,
-       
+        model: res.data[0].bool,
+
       })
     })
-    wx.showLoading({
-      title: '加载中...',
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting['scope.writePhotosAlbum']) {
+          that.setData({
+            opType: true
+          })
+        } else {
+          console.log(2)
+        }
+      }
     })
-    that.setData({
-      img: options.img,
-    })
-    setTimeout(() => {
-      that.setData({
-        pop: false
-      })
-      wx.hideLoading();
-    }, 500)
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
     wx.hideLoading();
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
- 
+
 })

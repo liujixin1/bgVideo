@@ -1,11 +1,9 @@
 <!--pages/detail/detail.wxml-->
 <view class="container">
   <view class='main'>
-    <view wx:if="{{pop}}" class="pop"></view>
     <image class='imgMain' mode='aspectFill' src='{{img}}'></image>
-    <image class='footerImg' mode='aspectFill' src='../../images/footer.png'></image>
-    <button wx:if="{{model}}" class="itemLeFooter" open-type='getUserInfo' bindgetuserinfo="getUserInfo">领取红包封面</button>
-    <button wx:else class="itemLeFooter" open-type='getUserInfo' bindgetuserinfo="getUserInfo">抽奖领取红包封面</button>
-
+    <button wx:if='{{opType}}' class="itemLeFooter" bindtap='saveImage'>保存背景</button>
+  <button wx:else class="itemLeFooter" open-type="openSetting" bindtap='saveImage'>保存背景</button>
+    <!-- <button  class="itemLeFooter" open-type='getUserInfo' bindgetuserinfo="getUserInfo">下载背景</button> -->
   </view>
 </view>

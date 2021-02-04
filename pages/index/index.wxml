@@ -13,7 +13,7 @@
     <view class='list'>
       <block wx:for='{{listData}}' wx:key="item">
 
-        <view data-id='{{item.id}}' class='listItem' bindtap='toArticleDetail'>
+        <view data-id='{{item._id}}' class='listItem' bindtap='toArticleDetail'>
           <image mode='aspectFill' class='itemImg' src='{{item.img}}'></image>
           <view class='itemText'>不老男神，每年都是18岁，求容颜不老术呀</view>
         </view>

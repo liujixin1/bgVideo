@@ -47,13 +47,13 @@
       </view>
       <view class='iconfont icon-rightArrow'></view>
     </button>
-    <button class='nav-item' bindtap="toPacket">
+    <!-- <button class='nav-item' bindtap="toPacket">
       <view class='nav-item-left'>
         <view class='iconfont icon-my'></view>
         <view class='name'>我的红包封面</view>
       </view>
       <view class='iconfont icon-rightArrow'></view>
-    </button>
+    </button> -->
     
   </view>
 </view>

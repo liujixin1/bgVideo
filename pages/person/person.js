@@ -18,11 +18,6 @@ Page({
       console.log(err)
     })
   },
-  toPacket(){
-    wx.navigateTo({
-      url: `/pages/packet/packet`
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
