@@ -1,5 +1,13 @@
 <!--pages/index/index.wxml-->
 <view class='container'>
+  <view class="nav">
+    <view data-id='1' class="navList {{author==1?'active':''}}" bindtap="navTab">推荐</view>
+    <view data-id='2' class="navList {{author==2?'active':''}}"  bindtap="navTab">心情</view>
+    <view data-id='3' class="navList {{author==3?'active':''}}"  bindtap="navTab">动物</view>
+    <view data-id='4' class="navList {{author==4?'active':''}}"  bindtap="navTab">励志</view>
+    <view data-id='5' class="navList {{author==5?'active':''}}"  bindtap="navTab">动漫</view>
+    <view data-id='6' class="navList {{author==6?'active':''}}"  bindtap="navTab">风景</view>
+  </view>
   <swiper mode='aspectFill' indicator-dots="{{true}}" autoplay="true" interval="3500" duration="500" circular="true"
     indicator-color="rgba(0,0,0,0.2)" indicator-active-color="rgba(0,0,0,0.8)" class='swiper-banner'>
     <block wx:for="{{banner}}" wx:key='key'>
@@ -8,14 +16,23 @@
       </swiper-item>
     </block>
   </swiper>
-
+  <!-- <view class="nav {{isFixedTop?'fixed':''}}" id="navbar" >
+    <view data-id='1' class="navList {{author==1?'active':''}}" bindtap="navTab">推荐</view>
+    <view data-id='2' class="navList {{author==2?'active':''}}"  bindtap="navTab">心情</view>
+    <view data-id='3' class="navList {{author==3?'active':''}}"  bindtap="navTab">动物</view>
+    <view data-id='4' class="navList {{author==4?'active':''}}"  bindtap="navTab">励志</view>
+    <view data-id='5' class="navList {{author==5?'active':''}}"  bindtap="navTab">动漫</view>
+    <view data-id='6' class="navList {{author==6?'active':''}}"  bindtap="navTab">风景</view>
+  </view> -->
+  <!-- 用于吸顶后 占位用的 -->
+ <!-- <view class="nav" wx:if="{{isFixedTop}}"></view> -->
   <view class="main">
     <view class='list'>
       <block wx:for='{{listData}}' wx:key="item">
 
         <view data-id='{{item._id}}' class='listItem' bindtap='toArticleDetail'>
           <image mode='aspectFill' class='itemImg' src='{{item.img}}'></image>
-          <view class='itemText'>不老男神，每年都是18岁，求容颜不老术呀</view>
+          <view class='itemText'>{{item.name}}</view>
         </view>
       </block>
     </view>

@@ -1,6 +1,11 @@
 /* pages/index/index.wxss */
-page{
+page {
   background: #f8f8f8;
+  position: relative;
+}
+swiper{
+  padding-top: 100rpx;
+  background: #fff;
 }
 /* banner轮播图  */
 /* .swiper_container{
@@ -33,7 +38,8 @@ swiper-item .swiperText{
   height: 500rpx;
   width: 100%;
 }
-.swiper-banner swiper-item .videoPop{
+
+.swiper-banner swiper-item .videoPop {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -41,18 +47,21 @@ swiper-item .swiperText{
   left: 0;
   z-index: 10;
 }
-.swiper-banner swiper-item .videoPop .icon-pause{
+
+.swiper-banner swiper-item .videoPop .icon-pause {
   font-size: 120rpx;
   color: #fff;
   margin-left: 315rpx;
   line-height: 420rpx;
   opacity: 0.7;
 }
+
 .swiper-banner swiper-item image {
   height: 100%;
   width: 100%;
 }
-.bannerText{
+
+.bannerText {
   position: absolute;
   bottom: 30rpx;
   left: 0;
@@ -64,11 +73,47 @@ swiper-item .swiperText{
   padding: 0 10%;
   font-weight: bold;
 }
-.main{
+
+.nav {
+  width: 100%;
+  margin: 0 auto;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  position: fixed;
+}
+
+.nav .navList {
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  width: 100rpx;
+  text-align: center;
+  font-weight: bold;
+  color: #999;
+}
+
+.nav .navList.active {
+  color: #008de1;
+  font-size: 32rpx;
+}
+
+.nav.fixed {
+  position: fixed;
+}
+
+.main {
   width: 730rpx;
   margin: 0 auto;
   margin-top: 10rpx;
 }
+
 .list {
   display: flex;
   flex-wrap: wrap;
@@ -92,13 +137,17 @@ swiper-item .swiperText{
 
 .list .listItem .itemText {
   position: absolute;
-  bottom: 20rpx;
-  width: 320rpx;
-  left: 20rpx;
+  bottom: 0rpx;
+  left: 0;
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
   color: #fff;
-  font-size: 24rpx;
+  font-size: 28rpx;
+  font-weight: bold;
 }
-.isEnd{
+
+.isEnd {
   text-align: center;
   height: 60rpx;
   line-height: 60rpx;

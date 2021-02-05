@@ -4,7 +4,7 @@ App({
     const that = this;
     //初始化数据库
     wx.cloud.init({
-      env: "home-4gev7v2if54f1e14"
+      env: "cloud-kf4kf"
     })
     
 

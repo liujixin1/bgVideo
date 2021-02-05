@@ -11,10 +11,13 @@ Page({
     banner: [],
     page: 0,
     isEnd: false,
+    author: 1,
+    // navbarInitTop: 0, //导航栏初始化距顶部的距离
+    // isFixedTop: false, //是否固定顶部
   },
   toArticleDetail(e) {
     const id = e.currentTarget.dataset.id;
-   
+
     wx.navigateTo({
       url: `/pages/detail/detail?&id=${id}`
     })
@@ -31,7 +34,8 @@ Page({
     })
     db.collection('test').where({
       show: true,
-      banner: false
+      banner: false,
+      author: that.data.author
     }).skip(page * PAGE).limit(PAGE).orderBy('date', 'desc').get().then(res => {
       wx.hideLoading();
       wx.stopPullDownRefresh();
@@ -45,6 +49,12 @@ Page({
         // status: 1
       })
     })
+
+
+  },
+  //获取banner数据
+  getbanner() {
+    const that = this;
     db.collection('test').where({
       banner: true,
       show: true
@@ -53,7 +63,16 @@ Page({
         banner: res.data
       })
     })
-
+  },
+  // nav
+  navTab(e) {
+    const that = this;
+    let id = parseInt(e.currentTarget.dataset.id);
+    that.setData({
+      author: id,
+      listData:[]
+    })
+    that.getData();
   },
   /**
    * 生命周期函数--监听页面加载
@@ -64,6 +83,7 @@ Page({
       navH: app.globalData.navHeight
     })
     that.getData();
+    that.getbanner()
   },
 
   /**
@@ -77,7 +97,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function (options) {
+    // var that = this;
 
+    // if (that.data.navbarInitTop == 0) {
+
+    //  //获取节点距离顶部的距离
+    //  wx.createSelectorQuery().select('#navbar').boundingClientRect(function(rect) {
+    //   if (rect && rect.top > 0) {
+    //    var navbarInitTop = parseInt(rect.top);
+    //    that.setData({
+    //     navbarInitTop: navbarInitTop
+    //    });
+    //   }
+    //  }).exec();
+
+    // }
   },
 
   /**
@@ -122,7 +156,8 @@ Page({
     // if (that.data.status == 1) {
     db.collection('test').where({
       show: true,
-      banner: false
+      banner: false,
+      author: that.data.author
     }).skip(page * PAGE).limit(PAGE).orderBy('date', 'desc').get().then(res => {
       wx.hideLoading();
       wx.stopPullDownRefresh();
@@ -179,5 +214,24 @@ Page({
       title: '微信红包封面',
       imageUrl: that.data.banner[0].img
     }
-  }
+  },
+  /**
+   * 监听页面滑动事件
+   */
+  //  onPageScroll: function(e) {
+  //   var that = this;
+  //   var scrollTop = parseInt(e.scrollTop); //滚动条距离顶部高度
+
+  //   //判断'滚动条'滚动的距离 和 '元素在初始时'距顶部的距离进行判断
+  //   var isSatisfy = scrollTop >= that.data.navbarInitTop ? true : false;
+  //   //为了防止不停的setData, 这儿做了一个等式判断。 只有处于吸顶的临界值才会不相等
+  //   if (that.data.isFixedTop === isSatisfy) {
+  //    return false;
+  //   }
+
+  //   that.setData({
+  //    isFixedTop: isSatisfy
+  //   });
+  //  }
+
 })

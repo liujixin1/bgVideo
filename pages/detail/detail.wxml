@@ -2,9 +2,17 @@
 <view class="container">
   <view class='main'>
     <image wx:if="{{!model}}" class='imgMain' mode='aspectFill' src='{{img}}'></image>
-    <video wx:else class="imgMain" src="{{videoPath}}"></video>
+    <view class="a" wx:else>
+      <form  class="b">
+        <cover-view class="c">
+          <swiper-item class="d">
+            <video object-fit="contain" class="imgMain" src="{{videoPath}}"></video>
+          </swiper-item>
+        </cover-view>
+      </form>
+    </view>
     <button wx:if='{{opType}}' class="itemLeFooter" bindtap='saveImage'>保存背景</button>
-  <button wx:else class="itemLeFooter" open-type="openSetting" bindtap='saveImage'>保存背景</button>
+    <button wx:else class="itemLeFooter" open-type="openSetting" bindtap='saveImage'>保存背景</button>
     <!-- <button  class="itemLeFooter" open-type='getUserInfo' bindgetuserinfo="getUserInfo">下载背景</button> -->
   </view>
 </view>

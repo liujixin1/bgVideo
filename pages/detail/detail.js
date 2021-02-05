@@ -10,7 +10,7 @@ Page({
     model: '',
     img: '',
     opType: true,
-    videoPath: "https://video.beibeibang.com.cn/B01SC691.mp4"
+    videoPath: ""
   },
   // 登录
   getUserInfo: function (e) {
@@ -26,7 +26,7 @@ Page({
         wx.hideLoading();
       } else {
         app.login(e, function () {
-          wx.navigateTo({
+          wx.switchTab({
             url: `/pages/prize/prize`
           })
           wx.hideLoading();
@@ -66,7 +66,10 @@ Page({
                         wx.showModal({
                           content: '背景保存成功',
                           showCancel: false,
-                          success() {
+                          success(){
+                            wx.switchTab({
+                              url: '/pages/index/index'
+                            })
                             // app.putData(that.data.dataId, that.data.dataCenter)
                           }
                         })
@@ -117,6 +120,9 @@ Page({
                               content: '背景保存成功',
                               showCancel: false,
                               success() {
+                                wx.navigateTo({
+                                  url: '/pages/index/index'
+                                })
                                 // app.putData(that.data.dataId, that.data.dataCenter)
                               }
                             })
@@ -161,7 +167,8 @@ Page({
         wx.hideLoading()
       }, 500)
       that.setData({
-        img: res.data.img
+        img: res.data.img,
+        videoPath:res.data.video
       })
     })
   },
