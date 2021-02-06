@@ -3,7 +3,7 @@
   <view class="nav">
     <view data-id='1' class="navList {{author==1?'active':''}}" bindtap="navTab">推荐</view>
     <view data-id='2' class="navList {{author==2?'active':''}}"  bindtap="navTab">心情</view>
-    <view data-id='3' class="navList {{author==3?'active':''}}"  bindtap="navTab">动物</view>
+    <view data-id='3' class="navList {{author==3?'active':''}}"  bindtap="navTab">明星</view>
     <view data-id='4' class="navList {{author==4?'active':''}}"  bindtap="navTab">励志</view>
     <view data-id='5' class="navList {{author==5?'active':''}}"  bindtap="navTab">动漫</view>
     <view data-id='6' class="navList {{author==6?'active':''}}"  bindtap="navTab">风景</view>
