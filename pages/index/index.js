@@ -65,15 +65,15 @@ Page({
     })
   },
   // nav
-  navTab(e) {
-    const that = this;
-    let id = parseInt(e.currentTarget.dataset.id);
-    that.setData({
-      author: id,
-      listData:[]
-    })
-    that.getData();
-  },
+  // navTab(e) {
+  //   const that = this;
+  //   let id = parseInt(e.currentTarget.dataset.id);
+  //   that.setData({
+  //     author: id,
+  //     listData:[]
+  //   })
+  //   that.getData();
+  // },
   /**
    * 生命周期函数--监听页面加载
    */

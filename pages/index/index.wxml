@@ -1,13 +1,13 @@
 <!--pages/index/index.wxml-->
 <view class='container'>
-  <view class="nav">
+  <!-- <view class="nav">
     <view data-id='1' class="navList {{author==1?'active':''}}" bindtap="navTab">推荐</view>
     <view data-id='2' class="navList {{author==2?'active':''}}"  bindtap="navTab">心情</view>
     <view data-id='3' class="navList {{author==3?'active':''}}"  bindtap="navTab">明星</view>
     <view data-id='4' class="navList {{author==4?'active':''}}"  bindtap="navTab">励志</view>
     <view data-id='5' class="navList {{author==5?'active':''}}"  bindtap="navTab">动漫</view>
     <view data-id='6' class="navList {{author==6?'active':''}}"  bindtap="navTab">风景</view>
-  </view>
+  </view> -->
   <swiper mode='aspectFill' indicator-dots="{{true}}" autoplay="true" interval="3500" duration="500" circular="true"
     indicator-color="rgba(0,0,0,0.2)" indicator-active-color="rgba(0,0,0,0.8)" class='swiper-banner'>
     <block wx:for="{{banner}}" wx:key='key'>

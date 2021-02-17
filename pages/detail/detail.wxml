@@ -5,7 +5,7 @@
     <view class="a" wx:else>
       <form class="b">
         <swiper-item class="d">
-          <video object-fit="contain" class="imgMain" src="{{videoPath}}"></video>
+          <video autoplay loop object-fit="cover" class="imgMain" src="{{videoPath}}"></video>
         </swiper-item>
       </form>
     </view>

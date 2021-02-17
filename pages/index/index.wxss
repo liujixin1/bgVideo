@@ -4,7 +4,7 @@ page {
   position: relative;
 }
 swiper{
-  padding-top: 100rpx;
+  /* padding-top: 100rpx; */
   background: #fff;
 }
 /* banner轮播图  */
